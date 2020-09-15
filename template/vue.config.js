@@ -40,7 +40,7 @@ module.exports = {
     })
     config.plugin('html')
       .tap(args => {
-        args[0].template = resolve('src/public/index.html')
+        args[0].template = resolve('public/index.html')
         return args
       })
   },
