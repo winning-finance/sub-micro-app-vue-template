@@ -1,8 +1,7 @@
-const path = require('path')
-
 const {
   installDependencies,
-  printMessage
+  printMessage,
+  validatePort
 } = require('./utils')
 const pkg = require('./package.json')
 
@@ -67,8 +66,10 @@ module.exports = {
     port: {
       when: 'isNotTest',
       type: 'number',
+      required: true,
       message: 'webpack-dev-server port?',
-      default: '3000'
+      default: 3000,
+      validate: validatePort
     },
     autoInstall: {
       when: 'isNotTest',

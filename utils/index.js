@@ -1,5 +1,24 @@
 
 const spawn = require('child_process').spawn
+const fs = require('fs')
+const path = require('path')
+const configPath = path.resolve(process.cwd(), 'service.config.js')
+
+exports.validatePort = function (port) {
+  try {
+    if (!port) return '请输入端口号'
+    if (fs.existsSync(configPath)) {
+      const { menu = [] } = require(configPath)
+      const portList = (menu.appMenuList || []).map(item => item.devEntry.match(/.+:(\d{1,5})/)[1])
+      if (portList.includes(port + '')) return '该端口已被其他子应用使用'
+      return true
+    }
+    return true
+  } catch (error) {
+    console.log(error)
+    return true
+  }
+}
 
 /**
  * Runs `npm install` in the project directory
