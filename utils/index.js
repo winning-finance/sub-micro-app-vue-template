@@ -71,7 +71,7 @@ exports.printMessage = function printMessage (data, { green, yellow }) {
 # =================================================
 To get started:
   ${green(
-    `${data.inPlace ? '' : `cd ../\n yarn serve`}`
+    `${data.inPlace ? '' : `lerna bootstrap \n  yarn serve`}`
   )}
   
 `
