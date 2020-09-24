@@ -3,7 +3,7 @@ const path = require('path')
 const resolve = dir => path.join(process.cwd(), '../../', dir)
 
 module.exports = {
-  publicPath: process.VUE_APP_SYSTEM_BASE_URL,
+  publicPath: process.env.VUE_APP_SYSTEM_BASE_URL,
   productionSourceMap: false,
   devServer: {
     hot: true,
