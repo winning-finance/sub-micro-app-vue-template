@@ -22,6 +22,7 @@
     "winning-web-his-main": "^0.0.1"
   },
   "devDependencies": {
+    "element-ui": "^2.13.2",
     "@winning-plugin/webpack-filelist-export":"^1.0.6",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",

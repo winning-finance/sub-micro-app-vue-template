@@ -1,6 +1,5 @@
 const { name } = require('./package')
 const path = require('path')
-const fileListPugin = require('@winning-plugin/webpack-filelist-export')
 const resolve = dir => path.join(process.cwd(), '../../', dir)
 
 module.exports = {
@@ -36,19 +35,6 @@ module.exports = {
     }
   },
   chainWebpack: config => {
-    config.plugin('filePlugin').after('html').use(fileListPugin, [
-      {
-        cssExternals: [
-          `/web-public/libs/win-components/skin/index.css?t=${Date.now()}`
-        ]
-      }
-    ])
-    config.externals({
-      'vue': 'Vue',
-      'vue-router': 'VueRouter',
-      'vuex': 'Vuex',
-      'element-ui': 'ELEMENT'
-    })
     config.plugin('html')
       .tap(args => {
         args[0].template = resolve('public/index.html')

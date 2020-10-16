@@ -7,9 +7,12 @@ import router from './router'
 {{#store}}
 import store from './store'
 {{/store}}
+import ElementUI from 'element-ui'
 import MicroApp from '@winning/micro-app'
 
 export * from '@winning/micro-app'
+
+Vue.use(ElementUI)
 
 Vue.config.productionTip = false
 
