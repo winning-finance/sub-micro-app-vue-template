@@ -27,6 +27,6 @@ Vue.use(MicroApp, {
   bootstrap: (props) => {
     console.log('bootstrap')
   },
-  mount: (props) => { },
+  mount: (vm,props) => { },
   unmount: (props) => { }
 })
