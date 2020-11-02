@@ -35,6 +35,12 @@ module.exports = {
     }
   },
   chainWebpack: config => {
+    config.externals({
+      vue: 'Vue',
+      'vue-router': 'VueRouter',
+      vuex: 'Vuex',
+      'element-ui': 'ELEMENT'
+    })
     config.plugin('html')
       .tap(args => {
         args[0].template = resolve('public/index.html')
